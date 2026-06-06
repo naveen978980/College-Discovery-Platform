@@ -1,0 +1,77 @@
+College Discovery Platform Architecture
+
+Frontend Layer:
+
+* React.js
+* React Router DOM
+* Axios
+* Tailwind CSS
+
+Features:
+
+* User Registration
+* User Login
+* College Search
+* Save Colleges
+* View Saved Colleges
+* Delete Saved Colleges
+
+Backend Layer:
+
+* Node.js
+* Express.js
+* JWT Authentication
+* REST APIs
+
+API Endpoints:
+
+* POST /api/auth/register
+* POST /api/auth/login
+* GET /api/colleges
+* GET /api/colleges/search
+* POST /api/saved-colleges
+* GET /api/saved-colleges
+* DELETE /api/saved-colleges/:id
+
+Authentication:
+
+* JWT Token generated after login
+* Token stored in Local Storage
+* Protected Routes for Saved Colleges
+* Auth Middleware verifies JWT token
+
+Database Layer:
+
+* PostgreSQL Database
+* Prisma ORM
+
+Database Tables:
+
+1. User
+
+   * id
+   * name
+   * email
+   * password
+
+2. College
+
+   * id
+   * name
+   * location
+   * fees
+   * rating
+
+3. SavedCollege
+
+   * id
+   * userId
+   * collegeId
+
+Flow:
+User → React Frontend → Axios API Calls → Express Server → JWT Authentication → Prisma ORM → PostgreSQL Database
+
+Deployment:
+Frontend → Vercel
+Backend → Render
+Database → PostgreSQL
